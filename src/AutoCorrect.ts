@@ -1,4 +1,4 @@
-import { GuardianError, LayoutAnomaly } from './types';
+// import { GuardianError, LayoutAnomaly } from './types';
 
 export interface AutoCorrectConfig {
   enabled: boolean;
@@ -144,7 +144,7 @@ export class AutoCorrect {
    * Handle white page detection
    */
   private handleWhitePage(): void {
-    console.warn('White page detected - attempting auto-correction');
+    // console.warn('White page detected - attempting auto-correction');
     
     // Try to restore from content history
     if (this.contentHistory.length > 0) {
@@ -160,7 +160,7 @@ export class AutoCorrect {
    * Handle completely empty page
    */
   private handleEmptyPage(): void {
-    console.warn('Empty page detected - attempting auto-correction');
+    // console.warn('Empty page detected - attempting auto-correction');
     
     // Try to inject fallback content
     this.injectFallbackContent();
@@ -213,7 +213,7 @@ export class AutoCorrect {
    * Handle page break in element
    */
   private handlePageBreak(element: Element): void {
-    console.warn('Page break detected in element:', element);
+    // console.warn('Page break detected in element:', element);
     
     // Try to fix the element's layout
     this.fixElementLayout(element);
@@ -236,7 +236,7 @@ export class AutoCorrect {
    * Handle mispositioned element
    */
   private handleMispositionedElement(element: Element): void {
-    console.warn('Mispositioned element detected:', element);
+    // console.warn('Mispositioned element detected:', element);
     
     // Try to fix positioning
     this.fixElementPositioning(element);
@@ -322,7 +322,6 @@ export class AutoCorrect {
    */
   private fixElementPositioning(element: Element): void {
     const rect = element.getBoundingClientRect();
-    const style = window.getComputedStyle(element);
     
     // If element is positioned outside viewport, try to bring it back
     if (rect.top < 0 || rect.left < 0) {

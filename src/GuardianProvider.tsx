@@ -1,12 +1,12 @@
-import React, { createContext, useContext, useReducer, useEffect, useCallback, ReactNode } from 'react';
+import React, { createContext, useContext, useReducer, useEffect, useCallback } from 'react';
 import { 
   GuardianContextValue, 
   GuardianProviderProps, 
   GuardianError, 
   LayoutAnomaly, 
   RecoveryAction,
-  GuardianEvent,
-  AutoCorrectConfig,
+  // GuardianEvent,
+  // AutoCorrectConfig,
   AutoCorrectAction
 } from './types';
 import { Reporter } from './Reporter';
@@ -130,7 +130,7 @@ export const GuardianProvider: React.FC<GuardianProviderProps> = ({
     maxRetries: recovery?.maxRetries ?? 3,
     fallbackComponent: recovery?.fallbackComponent,
     onRecovery: (action) => {
-      dispatch({ type: 'START_RECOVERY' });
+      dispatch({ type: 'START_RECOVERY', payload: action });
       onRecovery?.(action);
     }
   });

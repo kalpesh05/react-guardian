@@ -45,15 +45,15 @@ export type {
 export const VERSION = '1.0.0';
 
 // Default export for convenience
-export default {
-  GuardianProvider,
-  SmartBoundary,
-  useGuardian,
-  useErrorReporting,
-  useLayoutMonitoring,
-  useRecovery,
-  usePerformanceMonitoring,
-  useAutoCorrect,
-  withSmartBoundary,
-  VERSION
-};
+// export default {
+//   GuardianProvider,
+//   SmartBoundary,
+//   useGuardian,
+//   useErrorReporting,
+//   useLayoutMonitoring,
+//   useRecovery,
+//   usePerformanceMonitoring,
+//   useAutoCorrect,
+//   withSmartBoundary,
+//   VERSION
+// };

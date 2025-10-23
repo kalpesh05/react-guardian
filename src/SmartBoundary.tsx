@@ -1,5 +1,6 @@
-import React, { Component, ReactNode, ErrorInfo } from 'react';
+import React, { Component, ErrorInfo } from 'react';
 import { SmartBoundaryProps, GuardianError, RecoveryAction } from './types';
+import { useGuardianContext } from './GuardianProvider';
 
 // Default fallback component
 const DefaultFallback: React.FC<{ error: GuardianError; retry: () => void }> = ({ error, retry }) => (
@@ -73,7 +74,7 @@ class SmartBoundaryClass extends Component<SmartBoundaryProps, ErrorBoundaryStat
     const guardianError: GuardianError = {
       message: error.message,
       stack: error.stack,
-      componentStack: errorInfo.componentStack,
+      componentStack: errorInfo.componentStack || undefined,
       timestamp: Date.now(),
       userAgent: navigator.userAgent,
       url: window.location.href,

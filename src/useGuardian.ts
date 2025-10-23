@@ -60,7 +60,9 @@ export const useGuardian = (): UseGuardianReturn => {
     errorCount: context.errorCount,
     anomalyCount: context.anomalyCount,
     lastError: context.lastError,
-    lastAnomaly: context.lastAnomaly
+    lastAnomaly: context.lastAnomaly,
+    autoCorrectCount: context.autoCorrectCount,
+    lastAutoCorrect: context.lastAutoCorrect
   };
 };
 

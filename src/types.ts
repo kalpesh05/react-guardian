@@ -152,6 +152,8 @@ export interface UseGuardianReturn {
   anomalyCount: number;
   lastError?: GuardianError;
   lastAnomaly?: LayoutAnomaly;
+  autoCorrectCount: number;
+  lastAutoCorrect?: AutoCorrectAction;
 }
 
 // Event types for internal communication

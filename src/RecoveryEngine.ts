@@ -94,22 +94,22 @@ export class RecoveryEngine {
   /**
    * Handle fallback strategy
    */
-  private async handleFallback(action: RecoveryAction): Promise<boolean> {
+  private async handleFallback(_action: RecoveryAction): Promise<boolean> {
     try {
-      if (action.fallbackComponent) {
+      if (_action.fallbackComponent) {
         // This would typically be handled by the React component tree
         // The fallback component should be rendered by the SmartBoundary
-        console.log('Fallback component strategy executed');
+        // console.log('Fallback component strategy executed');
         return true;
       } else if (this.config.fallbackComponent) {
-        console.log('Default fallback component strategy executed');
+        // console.log('Default fallback component strategy executed');
         return true;
       } else {
-        console.warn('No fallback component available');
+        // console.warn('No fallback component available');
         return false;
       }
     } catch (error) {
-      console.error('Fallback strategy failed:', error);
+      // console.error('Fallback strategy failed:', error);
       return false;
     }
   }
@@ -117,7 +117,7 @@ export class RecoveryEngine {
   /**
    * Handle reload strategy
    */
-  private async handleReload(action: RecoveryAction): Promise<boolean> {
+  private async handleReload(_action: RecoveryAction): Promise<boolean> {
     try {
       // Soft reload - try to reload the current page
       window.location.reload();
@@ -168,7 +168,7 @@ export class RecoveryEngine {
   /**
    * Get smart recovery suggestions based on error type
    */
-  getSmartRecoverySuggestions(error: Error, context?: any): RecoveryAction[] {
+  getSmartRecoverySuggestions(error: Error, _context?: any): RecoveryAction[] {
     const suggestions: RecoveryAction[] = [];
 
     // Network errors

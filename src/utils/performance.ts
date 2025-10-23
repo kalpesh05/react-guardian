@@ -192,16 +192,17 @@ export class PerformanceMonitor {
       try {
         const layoutShiftObserver = new PerformanceObserver((list) => {
           for (const entry of list.getEntries()) {
-            if (entry.hadRecentInput) return;
+            const layoutShiftEntry = entry as any; // LayoutShiftEntry type
+            if (layoutShiftEntry.hadRecentInput) return;
 
             this.recordMetric({
               name: 'layout-shift',
-              duration: entry.value,
+              duration: layoutShiftEntry.value,
               timestamp: Date.now(),
               metadata: {
                 type: 'layout-shift',
-                value: entry.value,
-                sources: entry.sources
+                value: layoutShiftEntry.value,
+                sources: layoutShiftEntry.sources
               }
             });
           }
@@ -210,7 +211,7 @@ export class PerformanceMonitor {
         layoutShiftObserver.observe({ entryTypes: ['layout-shift'] });
         this.observers.push(layoutShiftObserver);
       } catch (error) {
-        console.warn('Layout shift observer not supported:', error);
+        // console.warn('Layout shift observer not supported:', error);
       }
     }
   }

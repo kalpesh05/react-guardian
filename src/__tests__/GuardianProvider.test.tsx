@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { GuardianProvider, useGuardian } from '../GuardianProvider';
+import { GuardianProvider } from '../GuardianProvider';
+import { useGuardian } from '../useGuardian';
 
 // Test component that uses the guardian context
 const TestComponent = () => {

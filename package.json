@@ -1,5 +1,5 @@
 {
-  "name": "react-guardian",
+  "name": "react-safeguard",
   "version": "1.0.0",
   "description": "A comprehensive React error boundary and monitoring package with automatic DOM/layout anomaly detection, smart recovery, and event reporting",
   "main": "dist/index.js",
@@ -25,9 +25,14 @@
     "layout-detection",
     "recovery",
     "error-reporting",
-    "typescript"
+    "typescript",
+    "auto-correct",
+    "white-page",
+    "page-break",
+    "performance",
+    "guardian"
   ],
-  "author": "Your Name",
+  "author": "Kalpesh",
   "license": "MIT",
   "peerDependencies": {
     "react": ">=16.8.0",
@@ -68,5 +73,13 @@
   "bugs": {
     "url": "https://github.com/kalpesh05/react-guardian/issues"
   },
-  "homepage": "https://github.com/kalpesh05/react-guardian#readme"
+  "homepage": "https://github.com/kalpesh05/react-guardian#readme",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
 }
